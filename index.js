@@ -26,16 +26,16 @@ function formatDateString(updated_at) {
 
 ////////// รันลำดับที่หนึ่ง ด้วยคำสั่ง "node index.js"
 ////////// สร้างตารางให้กับก้อน-DB:: license_daily
-sequelize.sync({ force: true }).then(() => {
-    app.listen(port, () => {
-        console.log(`Server Running ${(port)}`);
-    });
-});
+// sequelize.sync({ force: true }).then(() => {
+//     app.listen(port, () => {
+//         console.log(`Server Running ${(port)}`);
+//     });
+// });
 
 
 
 ////////// run Cleansing
-// readdir_jsondata();  //// รันลำดับที่สอง ////
+readdir_jsondata();  //// รันลำดับที่สอง ////
 
 async function readdir_jsondata() {
     const fs = require('fs').promises;
@@ -130,14 +130,32 @@ async function StarPM(dataJson) {
             const vehicle = json[i];
             let vehicle_Id = 0;
 
-            console.log(clc.red(" for ~"));
+            // console.log(clc.red(" for ~"));
             // console.log(excel);
             // console.log(vehicle);
 
             try {
+                ///////////////////////////////////////////////////////////////////////
+                //  createNew
+                ///////////////////////////////////////////////////////////////////////
                 vehicle_Id = await License.createNewLicense(vehicle, excel);
                 console.log('Success create vehicle_Id:  ', vehicle_Id);
+                
             
+                ///////////////////////////////////////////////////////////////////////
+                // update
+                ///////////////////////////////////////////////////////////////////////
+                // const isFind = await License.findVehicle(vehicle.note_id_t);
+                // if (isFind) {
+                //     vehicle_Id = await License.updateLicense(vehicle, excel, isFind);
+                //     console.log('Success update vehicle_Id:  ', vehicle_Id);
+                //     // 
+                // } else {
+                //     vehicle_Id = await License.createNewLicense(vehicle, excel);
+                //     console.log('Success create vehicle_Id:  ', vehicle_Id);
+                //     // 
+                // }
+
             } catch (err) {
                 // console.error('Error:  ', err.message || err);
                 // ตัด Error message ด้วย | และนำไปใช้ใน parameterized query
