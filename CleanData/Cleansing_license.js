@@ -284,16 +284,16 @@ async function cleansingData(car, cleansingData) {
 //     }
 // }
 async function getValueByName(data, name) {
-    console.log('--- getValueByName ---');
+    // console.log('--- getValueByName ---');
     const regex = new RegExp(`${name}\\s+([^\\n]+)`, 'i'); // ปรับ RegEx ให้รองรับช่องว่าง
     const match = data.match(regex); // ค้นหาด้วย regex
-    console.log('match:', match);
+    // console.log('match:', match);
 
     if (match && match[1]) {
-        console.log('match=>', match[1].trim());
+        // console.log('getValueByName match=>', match[1].trim());
         return match[1].trim(); // ตัดช่องว่างออกแล้วคืนค่าที่หาเจอ
     } else {
-        console.log('match==> null');
+        // console.log('getValueByName match==> null');
         return null; // ถ้าไม่พบให้คืนค่า null
     }
 }

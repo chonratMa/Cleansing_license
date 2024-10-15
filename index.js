@@ -26,16 +26,16 @@ function formatDateString(updated_at) {
 
 ////////// รันลำดับที่หนึ่ง ด้วยคำสั่ง "node index.js"
 ////////// สร้างตารางให้กับก้อน-DB:: license_daily
-// sequelize.sync({ force: true }).then(() => {
-//     app.listen(port, () => {
-//         console.log(`Server Running ${(port)}`);
-//     });
-// });
+sequelize.sync({ force: true }).then(() => {
+    app.listen(port, () => {
+        console.log(`Server Running ${(port)}`);
+    });
+});
 
 
 
 ////////// run Cleansing
-readdir_jsondata();  //// รันลำดับที่สอง ////
+// readdir_jsondata();  //// รันลำดับที่สอง ////
 
 async function readdir_jsondata() {
     const fs = require('fs').promises;
