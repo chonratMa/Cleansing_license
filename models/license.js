@@ -11,136 +11,522 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.STRING(50),
                 unique: true
             },
-            birth_village: DataTypes.STRING(100),
-            birth_district: DataTypes.STRING(25),
-            birth_province: DataTypes.STRING(25),
-            cat: DataTypes.STRING(15),
-            changelog: DataTypes.TEXT,
-            dateofbirth: DataTypes.STRING(50),
-            district: DataTypes.STRING(25),
-            division_no: DataTypes.STRING(15),
-            editedby: DataTypes.STRING(15),
-            entry_date: DataTypes.STRING(25),
-            encoder: DataTypes.STRING(50),
-            examdates: DataTypes.STRING(150),
-            examdate_A: DataTypes.STRING(15),
-            examdate_A1: DataTypes.STRING(15),
-            examdate_A2: DataTypes.STRING(15),
-            examdate_B: DataTypes.STRING(15),
-            examdate_C: DataTypes.STRING(15),
-            examdate_D: DataTypes.STRING(15),
-            examdate_D1: DataTypes.STRING(15),
-            examdate_E: DataTypes.STRING(15),
-            examplace_A: DataTypes.STRING(25),
-            examplace_A1: DataTypes.STRING(25),
-            examplace_A2: DataTypes.STRING(25),
-            examplace_B: DataTypes.STRING(25),
-            examplace_C: DataTypes.STRING(25),
-            examplace_D: DataTypes.STRING(25),
-            examplace_D1: DataTypes.STRING(25),
-            examplace_E: DataTypes.STRING(25),
-            exam_A: DataTypes.STRING(15),
-            exam_A1: DataTypes.STRING(15),
-            exam_A2: DataTypes.STRING(15),
-            exam_B: DataTypes.STRING(15),
-            exam_C: DataTypes.STRING(15),
-            exam_D: DataTypes.STRING(15),
-            exam_D1: DataTypes.STRING(15),
-            exam_E: DataTypes.STRING(15),
-            examnumber: DataTypes.STRING(15),
-            examtype: DataTypes.STRING(15),
-            expire_date: DataTypes.STRING(15),
-            id_t: DataTypes.STRING(30),
-            in1: DataTypes.CHAR(3),
-            issue_date: DataTypes.STRING(15),
-            issue_place: DataTypes.STRING(40),
-            license_A: DataTypes.STRING(25),
-            license_A1: DataTypes.STRING(25),
-            license_A2: DataTypes.STRING(25),
-            license_B: DataTypes.STRING(25),
-            license_C: DataTypes.STRING(25),
-            license_D: DataTypes.STRING(25),
-            license_D1: DataTypes.STRING(25),
-            license_E: DataTypes.STRING(25),
-            license_place_A: DataTypes.STRING(25),
-            license_place_A1: DataTypes.STRING(25),
-            license_place_A2: DataTypes.STRING(25),
-            license_place_B: DataTypes.STRING(25),
-            license_place_C: DataTypes.STRING(25),
-            license_place_D: DataTypes.STRING(25),
-            license_place_D1: DataTypes.STRING(25),
-            license_place_E: DataTypes.STRING(25),
-            license_no: DataTypes.STRING(15),
-            log: DataTypes.TEXT,
-            mistakeby: DataTypes.STRING(25),
-            modify_date: DataTypes.STRING(20),
-            name: DataTypes.STRING(100),
-            name_inter: DataTypes.STRING(40),
-            nationality_lao: DataTypes.STRING(25),
-            nationality_inter: DataTypes.STRING(25),
-            number: DataTypes.STRING(50),
-            occupation: DataTypes.STRING(25),
-            object_id: DataTypes.STRING(25),
-            office: DataTypes.STRING(50),
-            others: DataTypes.STRING(50),
-            owner: DataTypes.STRING(25),
-            parent_id: DataTypes.STRING(25),
-            photofileno: DataTypes.STRING(25),
-            photo: DataTypes.STRING(150),
-            phone: DataTypes.STRING(25),
-            print_count: DataTypes.CHAR(2),
-            printlog: DataTypes.TEXT,
-            province: DataTypes.STRING(25),
-            province_abbr: DataTypes.STRING(15),
-            province_no: DataTypes.STRING(15),
-            remark: DataTypes.TEXT,
-            remark1: DataTypes.TEXT,
-            result_A: DataTypes.STRING(50),
-            result_A1: DataTypes.STRING(50),
-            result_A2: DataTypes.STRING(50),
-            result_B: DataTypes.STRING(50),
-            result_C: DataTypes.STRING(50),
-            result_D: DataTypes.STRING(50),
-            result_D1: DataTypes.STRING(50),
-            result_E: DataTypes.STRING(50),
-            root: DataTypes.STRING(50),
-            school_A: DataTypes.STRING(50),
-            school_A1: DataTypes.STRING(50),
-            school_A2: DataTypes.STRING(50),
-            school_B: DataTypes.STRING(50),
-            school_C: DataTypes.STRING(50),
-            school_D: DataTypes.STRING(50),
-            school_D1: DataTypes.STRING(50),
-            school_E: DataTypes.STRING(50),
-            train_at: DataTypes.STRING(50),
-            type: DataTypes.STRING(15),
-            update_time: DataTypes.STRING(20),
-            village: DataTypes.STRING(50),
-            withdrawer: DataTypes.STRING(25),
-            version: DataTypes.CHAR(3),
-            access: DataTypes.STRING(15),
-            collection: DataTypes.STRING(50),
-            counted: DataTypes.CHAR(10),
-            deleted: DataTypes.CHAR(5),
-            policenote: DataTypes.TEXT,
-            data_code: DataTypes.STRING(25),
-            date_report: DataTypes.STRING(20),
-            department: DataTypes.STRING(5),
-            employee_number: DataTypes.STRING(50),
-            eye_color: DataTypes.STRING(20),
-            fine9: DataTypes.STRING(5),
-            finedate: DataTypes.STRING(20),
-            finelocation: DataTypes.STRING(100),
-            finelog: DataTypes.TEXT,
-            made_out: DataTypes.STRING(50),
-            olddata: DataTypes.STRING(50),
-            paper: DataTypes.STRING(5),
-            province_code: DataTypes.STRING(5),
-            releasedate: DataTypes.STRING(50),
-            resolution: DataTypes.STRING(100),
-            row: DataTypes.STRING(25),
-            save: DataTypes.STRING(20),
-            work_phone: DataTypes.STRING(25),
+            birth_village: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            birth_district: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            birth_province: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            cat: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            dateofbirth:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            district: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            division_no: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            editedby: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            entry_date: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            encoder:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            examdates: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            examdate_A: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            examdate_A1: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            examdate_A2: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            examdate_B: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            examdate_C: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            examdate_D: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            examdate_D1: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            examdate_E: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            examplace_A: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            examplace_A1: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            examplace_A2: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            examplace_B: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            examplace_C: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            examplace_D: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            examplace_D1: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            examplace_E: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            exam_A: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            exam_A1: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            exam_A2: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            exam_B: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            exam_C: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            exam_D: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            exam_D1: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            exam_E: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            examnumber: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            examtype: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            expire_date: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            id_t: {
+                type: DataTypes.STRING(30),
+                allowNull: true,
+            },
+            in1: {
+                type: DataTypes.CHAR(3),
+                allowNull: true,
+            },
+            issue_date: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            issue_place: {
+                type: DataTypes.STRING(40),
+                allowNull: true,
+            },
+            license_A: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            license_A1: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            license_A2: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            license_B: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            license_C: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            license_D: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            license_D1: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            license_E: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            license_place_A: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            license_place_A1: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            license_place_A2: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            license_place_B: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            license_place_C: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            license_place_D: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            license_place_D1: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            license_place_E: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            license_no: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            log: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            mistakeby: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            modify_date: {
+                type: DataTypes.STRING(20),
+                allowNull: true,
+            },
+            name: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            name_inter: {
+                type: DataTypes.STRING(20),
+                allowNull: true,
+            },
+            nationality_lao: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            nationality_inter: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            number:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            occupation: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            object_id: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            office:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            others:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            owner: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            parent_id: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            photofileno: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            photo: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            phone: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            print_count: {
+                type: DataTypes.CHAR(2),
+                allowNull: true,
+            },
+            printlog: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            province: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            province_abbr: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            province_no: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            remark: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            remark1: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            result_A:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            result_A1:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            result_A2:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            result_B:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            result_C:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            result_D:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            result_D1:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            result_E:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            root:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            school_A:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            school_A1:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            school_A2:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            school_B:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            school_C:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            school_D:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            school_D1:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            school_E:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            train_at:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            type: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            update_time: {
+                type: DataTypes.STRING(20),
+                allowNull: true,
+            },
+            village:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            withdrawer: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            version: {
+                type: DataTypes.CHAR(3),
+                allowNull: true,
+            },
+            access: {
+                type: DataTypes.STRING(15),
+                allowNull: true,
+            },
+            collection:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            counted: {
+                type: DataTypes.CHAR(10),
+                allowNull: true,
+            },
+            deleted: {
+                type: DataTypes.CHAR(5),
+                allowNull: true,
+            },
+            policenote: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            data_code: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            date_report: {
+                type: DataTypes.STRING(20),
+                allowNull: true,
+            },
+            department: {
+                type: DataTypes.STRING(5),
+                allowNull: true,
+            },
+            employee_number:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            eye_color: {
+                type: DataTypes.STRING(20),
+                allowNull: true,
+            },
+            fine9: {
+                type: DataTypes.STRING(5),
+                allowNull: true,
+            },
+            finedate: {
+                type: DataTypes.STRING(20),
+                allowNull: true,
+            },
+            finelocation: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            finelog: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            made_out:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            olddata:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            paper: {
+                type: DataTypes.STRING(5),
+                allowNull: true,
+            },
+            province_code: {
+                type: DataTypes.STRING(5),
+                allowNull: true,
+            },
+            releasedate:{
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            resolution: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            row: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
+            save: {
+                type: DataTypes.STRING(20),
+                allowNull: true,
+            },
+            work_phone: {
+                type: DataTypes.TEXT,
+                allowNull: true,
+            },
             flag: DataTypes.INTEGER,
             created_at: { type: DataTypes.DATE, defaultValue: null },
             updated_at: { type: DataTypes.DATE, defaultValue: null },
@@ -148,6 +534,10 @@ module.exports = (sequelize, DataTypes) => {
         {
             timestamps: false,
             tableName: 'license',
+            engine: 'InnoDB',   // ใช้ InnoDB
+            charset: 'utf8',  // กำหนด charset
+            collate: 'utf8_unicode_ci',
+            rowFormat: 'DYNAMIC',  // ปรับ row format เป็น DYNAMIC
         }
     );
     return License;

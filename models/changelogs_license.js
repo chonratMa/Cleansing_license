@@ -9,18 +9,18 @@ module.exports = (sequelize, DataTypes) => {
             },
             date: {
                 type: DataTypes.CHAR(8),
-                allowNull: false,
-                defaultValue: ' ',
+                allowNull: true,  // อนุญาตให้เป็น null
+                defaultValue: null,  // ค่าเริ่มต้นเป็น null
             },
             time: {
                 type: DataTypes.CHAR(6),
-                allowNull: false,
-                defaultValue: ' ',
+                allowNull: true,  
+                defaultValue: null,  
             },
             note_id: {
                 type: DataTypes.STRING(50),
-                allowNull: false,
-                defaultValue: ' ',
+                allowNull: true,  
+                defaultValue: null,  
                 references: {
                     model: 'license',
                     key: 'note_id', 
@@ -28,33 +28,33 @@ module.exports = (sequelize, DataTypes) => {
             },
             user: {
                 type: DataTypes.STRING(255),
-                allowNull: false,
-                defaultValue: ' ',
+                allowNull: true,  
+                defaultValue: null,  
             },
             item: {
                 type: DataTypes.STRING(255),
-                allowNull: false,
-                defaultValue: ' ',
+                allowNull: true,  
+                defaultValue: null,  
             },
             old_data: {
                 type: DataTypes.STRING(255),
-                allowNull: false,
-                defaultValue: ' ',
+                allowNull: true,  
+                defaultValue: null,  
             },
             new_data: {
                 type: DataTypes.STRING(255),
-                allowNull: false,
-                defaultValue: ' ',
+                allowNull: true,  
+                defaultValue: null,  
             },
             add_date: {
                 type: DataTypes.CHAR(8),
-                allowNull: false,
-                defaultValue: ' ',
+                allowNull: true,  
+                defaultValue: null,  
             },
             add_emp: {
                 type: DataTypes.STRING(25),
-                allowNull: false,
-                defaultValue: ' ',
+                allowNull: true,  
+                defaultValue: null,  
             },
             created_at: { type: DataTypes.DATE, defaultValue: null },
             updated_at: { type: DataTypes.DATE, defaultValue: null },

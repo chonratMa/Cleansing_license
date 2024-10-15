@@ -36,4 +36,4 @@ module.exports = (sequelize, DataTypes) => {
         });
     };
     return license_daily_log
-}
+};

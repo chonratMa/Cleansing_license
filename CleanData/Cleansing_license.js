@@ -5,7 +5,7 @@ const { getAdjustedTime } = require('./set_time.js');
 async function cleansingData(car, cleansingData) {
     // console.log(car);
     // console.log("------- car ------");
-    // console.log(cleansingData);
+    // console.log(car.data);
     // process.exit(0);
 
     const color = compare.compareColor(car.color_t, cleansingData); // 0
@@ -54,6 +54,10 @@ async function cleansingData(car, cleansingData) {
     if (car.update_time_t != null) {
         time_t = car.update_time_t;
     }
+    // 
+    // Set val by.Tonoiy
+    // let xxx_data = null;
+    let xx = null;
     //////////////////////////////////////////////////
     //////////////// Return-Function ////////////////
     /////////////////////////////////////////////////
@@ -90,42 +94,41 @@ async function cleansingData(car, cleansingData) {
                     birth_district: cutData(50, await checkNull(car.birth_district_t)),
                     birth_province: cutData(50, await checkNull(car.birth_province_t)),
                     cat: cutData(50, await checkNull(car.cat_t)),
-                    changelog: await replaceSingleQuotes(await checkNull(car.changelog_t)),
                     dateofbirth: cutData(50, await checkNull(car.dateofbirth_t)),
                     district: cutData(50, await checkNull(car.district_t)),
                     division_no: cutData(20, await checkNull(car.division_no_t)),
                     editedby: cutData(50, await checkNull(car.editedby_t)),
 
-                    entry_date: xxx.data,
-                    encoder: xxx.data,
+                    entry_date: await getValueByName(car.data, 'entry_dateZQ'),
+                    encoder: await getValueByName(car.data, 'encoderZQ'),
                     examdates: cutData(150, await checkNull(car.examdates_t)),
                     examdate_A: cutData(50, await checkNull(car.examdate_A_t)),
-                    examdate_A1: xxx.data,
-                    examdate_A2: xxx.data,
+                    examdate_A1: await getValueByName(car.data, 'examdate_A1ZQ'),
+                    examdate_A2: await getValueByName(car.data, 'examdate_A2ZQ'),
                     examdate_B: cutData(50, await checkNull(car.examdate_B_t)),
                     examdate_C: cutData(50, await checkNull(car.examdate_C_t)),
-                    examdate_D: xxx.data,
+                    examdate_D: await getValueByName(car.data, 'examdate_DZQ'),
                     examdate_D1: xx,
 
-                    examdate_E: xxx.data,
-                    examplace_A: xxx.data,
-                    examplace_A1: xxx.data,
+                    examdate_E: await getValueByName(car.data, 'examdate_EZQ'),
+                    examplace_A: await getValueByName(car.data, 'examplace_AZQ'),
+                    examplace_A1: await getValueByName(car.data, 'examplace_A1ZQ'),
                     examplace_A2: xx,
-                    examplace_B: xxx.data,
-                    examplace_C: xxx.data,
-                    examplace_D: xxx.data,
+                    examplace_B: cutData(50, await checkNull(car.examplace_B_t)),
+                    examplace_C: cutData(50, await checkNull(car.examplace_C_t)),
+                    examplace_D: await getValueByName(car.data, 'examplace_DZQ'),
                     examplace_D1: xx,
-                    examplace_E: xxx.data,
-                    exam_A: xxx.data,
+                    examplace_E: await getValueByName(car.data, 'examplace_EZQ'),
+                    exam_A: await getValueByName(car.data, 'exam_AZQ'),
 
-                    exam_A1: xxx.data,
-                    exam_A2: xxx.data,
-                    exam_B: xxx.data,
-                    exam_C: xxx.data,
-                    exam_D: xxx.data,
-                    exam_D1: xxx.data,
-                    exam_E: xxx.data,
-                    examnumber: xxx.data,
+                    exam_A1: await getValueByName(car.data, 'exam_A1ZQ'),
+                    exam_A2: await getValueByName(car.data, 'exam_A2ZQ'),
+                    exam_B: await getValueByName(car.data, 'exam_BZQ'),
+                    exam_C: await getValueByName(car.data, 'exam_CZQ'),
+                    exam_D: await getValueByName(car.data, 'exam_DZQ'),
+                    exam_D1: await getValueByName(car.data, 'exam_D1ZQ'),
+                    exam_E: await getValueByName(car.data, 'exam_EZQ'),
+                    examnumber: cutData(50, await checkNull(car.examnumber_t)),
                     examtype: cutData(50, await checkNull(car.examtypes_t)),
                     expire_date: cutData(50, await checkNull(car.expire_date_t)),
 
@@ -133,43 +136,43 @@ async function cleansingData(car, cleansingData) {
                     in1: xx,
                     issue_date: cutData(25, await formatDataYYYYMMDD(result[10])),
                     issue_place:cutData(100, await checkNull(car.issue_place_t)),
-                    license_A: xxx.data,
+                    license_A: cutData(50, await checkNull(car.license_A_t)),
                     license_A1: xx,
                     license_A2: xx,
-                    license_B: xxx.data,
-                    license_C: xxx.data,
+                    license_B: cutData(50, await checkNull(car.license_B_t)),
+                    license_C: cutData(50, await checkNull(car.license_C_t)),
                     license_D: xx,
 
                     license_D1: xx,
                     license_E: xx,
-                    license_place_A: xxx.data,
+                    license_place_A: cutData(50, await checkNull(car.license_place_A_t)),
                     license_place_A1: xx,
                     license_place_A2: xx,
-                    license_place_B: xxx.data,
-                    license_place_C: xxx.data,
-                    license_place_D: xxx.data,
+                    license_place_B: cutData(50, await checkNull(car.license_place_B_t)),
+                    license_place_C: cutData(50, await checkNull(car.license_place_C_t)),
+                    license_place_D: await getValueByName(car.data, 'license_place_DZQ'),
                     license_place_D1: xx,
                     license_place_E: xx,
 
                     license_no: cutData(50, await checkNull(car.license_no_t)),
                     log: await replaceSingleQuotes(await checkNull(car.log_t)),
-                    mistakeby: xxx.data,
+                    mistakeby: await getValueByName(car.data, 'mistakebyZQ'),
                     modify_date: cutData(50, await checkNull(car.modify_date)),
                     name: cutData(50, await checkNull(car.name_t)),
-                    name_inter:xxx.data,
+                    name_inter:cutData(50, await checkNull(car.name_inter_t)),
                     nationality_lao: cutData(50, await checkNull(car.nationality_lao_t)),
                     nationality_inter: cutData(50, await checkNull(car.nationality_inter_t)),
-                    number: xxx.data,
+                    number: cutData(50, await checkNull(car.number_t)),
                     occupation: cutData(50, await checkNull(car.occupation_t)),
 
                     object_id: cutData(50, await checkNull(car.object_id_t)),
-                    office: xxx.data,
-                    others: xxx.data,
+                    office: await getValueByName(car.data, 'officeZQ'),
+                    others: await getValueByName(car.data, 'othersZQ'),
                     owner: cutData(50, await checkNull(car.owner_t)),
                     parent_id: cutData(50, await checkNull(car.parent_id_t)),
-                    photofileno: xxx.data,
+                    photofileno: xx,
                     photo: cutData(50, await checkNull(car.photo_t)),
-                    phone: xxx.data,
+                    phone: await getValueByName(car.data, 'phoneZQ'),
                     print_count: cutData(50, await checkNull(car.print_count_t)),
                     printlog: cutData(50, await checkNull(car.printlog_t)),
 
@@ -181,71 +184,75 @@ async function cleansingData(car, cleansingData) {
                     result_A: xx,
                     result_A1: xx,
                     result_A2: xx,
-                    result_B: xxx.data,
-                    result_C: xxx.data,
+                    result_B: xx,
+                    result_C: xx,
 
                     result_D: xx,
                     result_D1: xx,
                     result_E: xx,
                     root: cutData(50, await checkNull(car.root_t)),
-                    school_A: xxx.data,
-                    school_A1: xxx.data,
-                    school_A2: xxx.data,
-                    school_B: xxx.data,
-                    school_C: xxx.data,
-                    school_D: xxx.data,
+                    school_A: await getValueByName(car.data, 'school_AZQ'),
+                    school_A1: await getValueByName(car.data, 'school_A1ZQ'),
+                    school_A2: await getValueByName(car.data, 'school_A2ZQ'),
+                    school_B: await getValueByName(car.data, 'school_BZQ'),
+                    school_C: await getValueByName(car.data, 'school_CZQ'),
+                    school_D: await getValueByName(car.data, 'school_DZQ'),
 
                     school_D1: xx,
-                    school_E: xxx.data,
-                    train_at: xxx.data,
+                    school_E: await getValueByName(car.data, 'school_EZQ'),
+                    train_at: cutData(50, await checkNull(car.train_at_t)),
                     type: cutData(50, await checkNull(car.type_t)),
                     update_time: cutData(50, await checkNull(car.update_time)),
                     village: cutData(50, await checkNull(car.village_t)),
-                    withdrawer: xxx.data,
+                    withdrawer: cutData(50, await checkNull(car.withdrawer_t)),
                     version: cutData(50, await checkNull(car._ver_t)),
                     access: cutData(50, await checkNull(car.access_t)),
                     collection: xx,
-                    // 
-                    // 
-                    counted: DataTypes.CHAR(10),
-                    deleted: DataTypes.CHAR(5),
-                    policenote: DataTypes.TEXT,
-                    data_code: cutData(50, await checkNull(car.birth_province_t)),
-                    date_report: DataTypes.STRING(20),
+                    
+                    counted: cutData(50, await checkNull(car.counted_t)),
+                    deleted: cutData(50, await checkNull(car.deleted_t)),
+                    policenote:  xx,
+                    data_code: xx,
+                    date_report: xx,
+                    department: xx,
+                    employee_number: xx,
+                    eye_color: xx,
+                    fine9: xx,
+                    finedate: xx,
 
-                    department: DataTypes.STRING(5),
-                    employee_number: DataTypes.STRING(50),
-                    eye_color: DataTypes.STRING(20),
-                    fine9: DataTypes.STRING(5),
-                    finedate: DataTypes.STRING(20),
+                    finelocation: xx,
+                    finelog: xx,
+                    made_out: xx,
+                    olddata: xx,
+                    paper: xx,
+                    province_code: cutData(50, await checkNull(car.province_code_t)),
+                    releasedate: xx,
+                    resolution: xx,
+                    row: xx,
+                    save: xx,
 
-                    finelocation: cutData(50, await checkNull(car.birth_province_t)),
-                    finelog: DataTypes.TEXT,
-                    made_out: DataTypes.STRING(50),
-                    olddata: DataTypes.STRING(50),
-                    paper: DataTypes.STRING(5),
-
-                    province_code: DataTypes.STRING(5),
-                    releasedate: DataTypes.STRING(50),
-                    resolution: cutData(50, await checkNull(car.birth_province_t)),
-                    row: cutData(50, await checkNull(car.birth_province_t)),
-                    save: DataTypes.STRING(20),
-
-                    work_phone: cutData(50, await checkNull(car.birth_province_t)),
-                    flag: DataTypes.INTEGER,
+                    work_phone: xx,
+                    flag: xx,
                     created_at: getAdjustedTime().currentTime,
                     updated_at: getAdjustedTime().currentTime
                 },
                 changelogs_license: {
                     date: xx,
                     time: xx,
-                    note_id: xx,
-                    user: xx,
+                    note_id: cutData(50, await checkNull(car.note_id_t)),
+                    user: cutData(50, await checkNull(car.print_user_1_t)),
                     item: xx,
                     old_data: xx,
                     new_data: xx,
                     add_date: xx,
-                    add_emp: xxx,
+                    add_emp: xx,
+                    created_at: getAdjustedTime().currentTime,
+                    updated_at: getAdjustedTime().currentTime
+                },
+                Changelog_Old: {
+                    license_id: 0,
+                    note_id: cutData(50, await checkNull(car.note_id_t)),
+                    log_activity: await replaceSingleQuotes(await checkNull(car.changelog_t)),
                     created_at: getAdjustedTime().currentTime,
                     updated_at: getAdjustedTime().currentTime
                 }
@@ -262,36 +269,39 @@ async function cleansingData(car, cleansingData) {
 //////////////////////////////////////////////////
 //////////////////// Function ////////////////////
 //////////////////////////////////////////////////
-async function checkNaN(value) {
-    return isNaN(parseInt(value)) ? null : parseInt(value);
+// async function getValueByName(data, name) {
+//     console.log('--- getValueByName ---')
+//     const regex = new RegExp(`${name}\\s*=\\s*([^\\n]+)`, 'i'); // สร้าง regex สำหรับหา entry_dateZQ
+//     const match = data.match(regex); // ค้นหาด้วย regex
+//     console.log(match)
+
+//     if (match && match[1]) {
+//         console.log('match=> ', match[1].trim())
+//         return match[1].trim(); // ตัดช่องว่างออกแล้วคืนค่าที่หาเจอ
+//     } else {
+//         console.log('match==> null')
+//         return null; // ถ้าไม่พบให้คืนค่า null
+//     }
+// }
+async function getValueByName(data, name) {
+    console.log('--- getValueByName ---');
+    const regex = new RegExp(`${name}\\s+([^\\n]+)`, 'i'); // ปรับ RegEx ให้รองรับช่องว่าง
+    const match = data.match(regex); // ค้นหาด้วย regex
+    console.log('match:', match);
+
+    if (match && match[1]) {
+        console.log('match=>', match[1].trim());
+        return match[1].trim(); // ตัดช่องว่างออกแล้วคืนค่าที่หาเจอ
+    } else {
+        console.log('match==> null');
+        return null; // ถ้าไม่พบให้คืนค่า null
+    }
 }
 
 async function checkNull(value) {
     return value == "" || value == undefined ? null : value;
 }
-async function checkNull_and_typeIng(data) {
-    if (data !== null && data !== undefined && data !== "") {
-        const intValue = parseInt(data);
-        return isNaN(intValue) ? null : intValue;
-    } else {
-        return null;
-    }
-}
 
-async function checkNull_tax_receipt(value) {
-    // ตรวจสอบค่าที่เป็น 0
-    if (typeof value === 'undefined' || (typeof value === 'string' && value !== '1')) {
-        return 0;
-    }
-    // ตรวจสอบค่าที่เป็น 1
-    if ((typeof value === 'string' && value === '1') || typeof value === 'number') {
-        return 1;
-    }
-}
-
-async function checkId(id, value) {
-    return id == undefined || id == null ? null : value;
-}
 function cutData(number, item) {
     let val = "";
     if (item != null && item != "") {
@@ -300,57 +310,6 @@ function cutData(number, item) {
         val = null;
     }
     return val;
-}
-function formatDateString_inTyprDate(dateString) {
-    if (dateString === "" || dateString === undefined || dateString === null) {
-        return null;
-    }
-
-    // ลบเครื่องหมาย / ที่ซ้ำกัน
-    dateString = dateString.replace(/\/\//g, '/');
-    const dateFormats = [
-        /\d{2}\/\d{2}\/\d{4}/, // DD/MM/YYYY
-        /\d{2}-\d{2}-\d{4}/,     // DD-MM-YYYY
-        /\d{4}\/\d{2}\/\d{2}/,   // YYYY/MM/DD
-        /\d{4}-\d{2}-\d{2}/      // YYYY-MM-DD
-    ];
-    for (const format of dateFormats) {
-        if (format.test(dateString)) {
-            // แปลงรูปแบบวันที่เป็น "YYYY-MM-DD"
-            const formattedDate = dateString.replace(/(\d{2})[\/-](\d{2})[\/-](\d{4})/, '$3-$2-$1');
-
-            // เช็คว่า formattedDate 
-            if (/^\d{4}-\d{2}-\d{2}$/.test(formattedDate)) {
-                return formattedDate;
-            }
-        }
-    }
-    return null;
-}
-function checkData_province(number_province_t, car_province_t) {
-    if (number_province_t === '01') {
-        let text_card_province_old = 0;
-        if (car_province_t.length > 12) {
-            text_card_province_old = 0;
-        } else {
-            text_card_province_old = 1;
-        }
-        return text_card_province_old;
-    } else {
-        return 0;
-    }
-}
-
-function checkTechnicalStatus(technicalcheck_t) {
-    if (technicalcheck_t === "" || technicalcheck_t === undefined || technicalcheck_t === null) {
-        return "none";
-    } else if (technicalcheck_t === "ຜ່ານ") {
-        return "pass";
-    } else if (technicalcheck_t === "ບໍ່ຜ່ານ") {
-        return "not_pass";
-    } else {
-        return "none";
-    }
 }
 
 async function formatDataYYYYMMDD(issueDate) {
@@ -362,30 +321,6 @@ async function formatDataYYYYMMDD(issueDate) {
     return formattedDate;
 }
 
-async function convertDate_print_log_datetime(dateString) {
-    // กำหนดรูปแบบของวันที่ด้วย Regular Expression
-    const dateFormats = [
-        /\d{2}\/\d{2}\/\d{4}/,   // DD/MM/YYYY
-        /\d{2}-\d{2}-\d{4}/,     // DD-MM-YYYY
-        /\d{4}\/\d{2}\/\d{2}/,   // YYYY/MM/DD
-        /\d{4}-\d{2}-\d{2}/      // YYYY-MM-DD
-    ];
-    // เช็คว่ารูปแบบของวันที่ตรงกับที่กำหนดหรือไม่
-    const isValidFormat = dateFormats.some(format => format.test(dateString));
-    // ถ้ารูปแบบไม่ถูกต้องให้โยนข้อผิดพลาด
-    if (!isValidFormat) {
-        return null;
-    }
-
-    // แยกวันที่ออกมาจากสตริง
-    let datePart = dateString.split(' ')[0]; // เอาแค่ส่วนของวันที่
-    // แยกปี เดือน วัน ออกจากกัน
-    const [day, month, year] = datePart.split(/[-\/]/); // แยกปี เดือน วัน
-    const formattedDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
-
-    return formattedDate;
-}
-
 async function replaceSingleQuotes(log_activity) {
     if (log_activity === null) {
         return null;
@@ -393,35 +328,6 @@ async function replaceSingleQuotes(log_activity) {
     return log_activity.replace(/'/g, "");
 }
 
-async function checkAndGenerateQuickId(license_no_t, result12, province) {
-    // Function to check for null or undefined values
-    function checkNull(value) {
-        return value !== null && value !== undefined ? value : null;
-    }
-
-    // Function to cut the data to a specified length
-    function cutData(length, data) {
-        return data ? data.substring(0, length) : '';
-    }
-
-    // Check if any of the three inputs are null or undefined
-    const checkedLicenseNo = checkNull(license_no_t);
-    const checkedResult12 = checkNull(result12);
-    const checkedProvince = checkNull(province);
-
-    if (checkedLicenseNo && checkedResult12 && checkedProvince) {
-        // Remove whitespace from the license number
-        const processedLicenseNo = cutData(20, checkedLicenseNo).replace(/\s/g, '');
-        const processedResult12 = cutData(5, checkedResult12);
-        const processedProvince = cutData(10, checkedProvince);
-
-        // Concatenate the processed values
-        return processedLicenseNo + processedResult12 + processedProvince;
-    } else {
-        // Return null if any value is missing
-        return null;
-    }
-}
 module.exports = {
     cleansingData,
 }
